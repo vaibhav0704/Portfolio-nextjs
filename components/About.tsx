@@ -38,7 +38,7 @@ export default function About({}: Props) {
       }}
       whileInView={{ opacity: 1, x: 0 }}
       className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">Here's a{" "} 
+        <h4 className="text-4xl font-semibold">Here is a{" "} 
         <span className="underline decoration-[#F7AB0A]/50">little</span>{" "} 
         background</h4>
 
