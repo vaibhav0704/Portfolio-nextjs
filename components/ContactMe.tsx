@@ -12,7 +12,7 @@ function ContactMe({}: Props) {
       <div className="flex flex-col space-y-4 md:space-y-16">
         <h4 className="text-2xl md:text-4xl font-semibold text-center mb-10">
           I have got just what you need.{" "}
-          <span className="decoration-[#F7AB0A]/50 underline">Let's Talk</span>
+          <span className="decoration-[#F7AB0A]/50 underline">Lets Talk</span>
         </h4>
 
         <div className="space-y-5 md:space-y-10">
