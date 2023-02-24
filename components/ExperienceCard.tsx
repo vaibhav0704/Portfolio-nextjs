@@ -6,8 +6,8 @@ type Props = {}
 function ExperienceCard({}: Props) {
   return (
     <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
-    w-[480px] md:w-[550px] xl:w-[900px] max-h-[600px] md:max-h-[700px] overflow-y-scroll snap-center bg-[#292929] p-10 hover:opacity-100 md:opacity-40
-    cursor-pointer transition-opacity duration-200">
+    w-[480px] md:w-[600px] xl:w-[900px] max-h-[600px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40
+    cursor-pointer transition-opacity duration-200 overflow-hidden">
       <motion.img
         initial={{
           y: -100,
@@ -45,13 +45,13 @@ function ExperienceCard({}: Props) {
           {/* tech used */}
           {/* tech used */}
         </div>
-        <p className="uppercase py-5">Started work... - Ended...</p>
+        <p className="uppercase py-5 text-gray-300">Started work... - Ended...</p>
         <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>Summary PointsSummary PointsSummary PointsSummary PointsSummary PointsSummary Points</li>
-          <li>Summary PointsSummary PointsSummary PointsSummary PointsSummary PointsSummary Points</li>
-          <li>Summary PointsSummary PointsSummary PointsSummary PointsSummary PointsSummary Points</li>
-          <li>Summary PointsSummary PointsSummary PointsSummary PointsSummary PointsSummary Points</li>
-          <li>Summary PointsSummary PointsSummary PointsSummary PointsSummary PointsSummary Points</li>
+          <li>Summary PointsSummary</li>
+          <li>Summary PointsSummary</li>
+          <li>Summary PointsSummary</li>
+          <li>Summary PointsSummary</li>
+          <li>Summary PointsSummary</li>
         </ul>
       </div>
     </article>

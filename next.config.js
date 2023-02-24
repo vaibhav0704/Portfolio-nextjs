@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      'instagram.fdel11-2.fna.fbcdn.net'
+      'instagram.fixc2-1.fna.fbcdn.net'
     ]
 
   }
