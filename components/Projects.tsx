@@ -1,11 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Project } from '../typings';
+import { urlFor } from '../sanity';
 
-type Props = {}
+type Props = { projects: Project[] }
 
-function Projects({}: Props) {
-
-  const projects = [1,2,3,4,5];
+function Projects({ projects }: Props) {
 
   return (
     <motion.div 
@@ -19,7 +19,7 @@ function Projects({}: Props) {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Projects</h3>
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400 
     scrollbar-thumb-[#F7AB0A]">
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
           <div 
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center
             p-8 md:p-44 h-screen"
@@ -35,17 +35,27 @@ function Projects({}: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="h-52 md:h-96 object-cover"
-              src="https://cdn.pocket-lint.com/r/s/1201x/assets/images/150925-apps-feature-what-is-slack-and-how-does-it-work-plus-plenty-of-slack-tips-and-tricks-image1-m1j0yhalq4.jpg"
+              src={urlFor(project?.image).url()}
             />
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-3xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]/50">Case Study {i+1} of {projects.length}:</span>{" "}
-                Slack clone
+                {project?.title}
               </h4>
+              <div className="flex items-center space-x-2 justify-center">
+                {project?.technologies.map(tech => (
+                  <img 
+                    className="h-8 w-8"
+                    key={tech._id} 
+                    src={urlFor(tech.image).url()} 
+                    alt={tech.title} />
+                ))}
+
+              </div>
 
               <p className="text-sm md:text-lg text-center md:text-left">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci urna, lacinia quis maximus at, feugiat a leo. Nam dignissim ullamcorper diam ac aliquet. Donec tincidunt tincidunt volutpat. Proin massa justo, porta non molestie nec, feugiat a neque. In hac habitasse platea dictumst. Aenean sed metus id odio dapibus gravida. 
+                {project?.summary}
               </p>
             </div>
           </div>

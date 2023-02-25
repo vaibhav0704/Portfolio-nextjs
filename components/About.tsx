@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from "framer-motion"
+import { PageInfo } from '../typings'
+import { urlFor } from '../sanity'
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
 
   return <motion.div 
     initial={{ opacity: 0 }}
@@ -22,7 +26,7 @@ export default function About({}: Props) {
         }}
         whileInView={{ x: 0 }}
         viewport={{ once: true }}
-        src="https://static01.nyt.com/images/2021/01/30/business/29musk-print/29musk-1-mediumSquareAt3X.jpg"
+        src={urlFor(pageInfo?.profilePic).url()}
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
           md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
       />
@@ -33,9 +37,7 @@ export default function About({}: Props) {
           background
         </h4>
         <p className="text-sm lg:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at neque ut lectus sodales pulvinar. Pellentesque egestas interdum lacinia. Vivamus dictum pellentesque orci vitae euismod. Aenean cursus tellus velit, a sagittis diam ullamcorper eget. Morbi pharetra convallis feugiat. Donec pharetra ligula auctor, venenatis justo a, finibus nulla. Fusce vitae accumsan purus.
-          Proin porta viverra metus, nec dictum ex rutrum volutpat. In eleifend arcu nec congue sollicitudin. Praesent dolor purus, ornare sed tellus venenatis, blandit commodo arcu. In sagittis massa vitae neque condimentum, sit amet iaculis eros gravida. Pellentesque venenatis urna. 
-
+          {pageInfo?.backgroundInformation}
         </p>
       </div>
     </motion.div>
