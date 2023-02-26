@@ -24,25 +24,25 @@ function ContactMe({}: Props) {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Contact Me</h3>
 
       <div className="flex flex-col space-y-4 md:space-y-16">
-        <h4 className="text-2xl md:text-4xl font-semibold text-center mb-10">
+        <h4 className="text-xl md:text-4xl font-semibold text-center mb-10">
           I have got just what you need.{" "}
           <span className="decoration-[#F7AB0A]/50 underline">Lets Talk</span>
         </h4>
 
         <div className="space-y-5 md:space-y-10">
           <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-[#F7AB0A] h-7 e-7 animate-pulse" />
-            <p className="text-2xl">+918885417955</p>
+            <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            <p className="text-xl md:text-2xl">+918885417955</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-[#F7AB0A] h-7 e-7 animate-pulse" />
-            <p className="text-2xl">vaibhavsaraf.08@gmail.com</p>
+            <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            <p className="text-xl md:text-2xl">vaibhavsaraf.08@gmail.com</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
-            <MapIcon className="text-[#F7AB0A] h-7 e-7 animate-pulse" />
-            <p className="text-2xl">123 Developer Lane</p>
+            <MapIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            <p className="text-xl md:text-2xl">123 Developer Lane</p>
           </div>
 
         </div>
