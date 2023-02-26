@@ -18,7 +18,7 @@ function SkillTab({ skill, directionLeft }: Props) {
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, x: 0 }}
       src={urlFor(skill?.image).url()}
-      className="rounded-full object-cover w-16 h-16
+      className="rounded-full object-cover w-12 h-12 md:w-16 md:h-16
       xl:w-24 xl:h-24 filter group-hover:grayscale transition duration-300 ease-in-out"
     />
 
