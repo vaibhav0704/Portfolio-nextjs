@@ -2,11 +2,11 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Project } from '../typings';
 import { urlFor } from '../sanity';
+import Link from 'next/link';
 
 type Props = { projects: Project[] }
 
 function Projects({ projects }: Props) {
-
   return (
     <motion.div 
       initial={{
@@ -25,18 +25,23 @@ function Projects({ projects }: Props) {
             p-8 md:p-44 h-screen"
             key={i}
           >
-
-            <motion.img 
-              initial={{
-                y: -300,
-                opacity: 0
-              }}
-              transition={{ duration: 1.2 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="h-52 md:h-96 object-cover"
-              src={urlFor(project?.image).url()}
-            />
+            <Link
+              href={project?.linkToBuild || ''}
+            >
+              <a target='_blank'>
+                <motion.img 
+                  initial={{
+                    y: -300,
+                    opacity: 0
+                  }}
+                  transition={{ duration: 1.2 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="h-52 md:h-96 object-cover"
+                  src={urlFor(project?.image).url()}
+                />
+              </a>
+            </Link>
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-3xl font-semibold text-center">
@@ -44,7 +49,7 @@ function Projects({ projects }: Props) {
                 {project?.title}
               </h4>
               <div className="flex items-center space-x-2 justify-center">
-                {project?.technologies.map(tech => (
+                {project?.technologies?.map(tech => (
                   <img 
                     className="h-8 w-8"
                     key={tech._id} 
