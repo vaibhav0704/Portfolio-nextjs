@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Project } from '../typings';
 import { urlFor } from '../sanity';
 import Link from 'next/link';
+import { SocialIcon } from 'react-social-icons';
 
 type Props = { projects: Project[] }
 
@@ -23,25 +24,32 @@ function Projects({ projects }: Props) {
           <div 
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center
             p-8 md:p-44 h-screen"
-            key={i}
+            key={project._id}
           >
-            <Link
-              href={project?.linkToBuild || ''}
-            >
-              <a target='_blank'>
-                <motion.img 
-                  initial={{
-                    y: -300,
-                    opacity: 0
-                  }}
-                  transition={{ duration: 1.2 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="h-52 md:h-96 object-cover"
-                  src={urlFor(project?.image).url()}
+            <div className="flex flex-col items-center justify-center">
+              <Link
+                href={project?.linkToBuild || ''}
+              >
+                <a target='_blank'>
+                  <motion.img 
+                    initial={{
+                      y: -300,
+                      opacity: 0
+                    }}
+                    transition={{ duration: 1.2 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="h-52 md:h-92 object-cover"
+                    src={urlFor(project?.image).url()}
+                  />
+                </a>
+              </Link>
+                <SocialIcon 
+                  url={project?.linkToGithub || ''}
+                  fgColor="gray"
+                  bgColor="transparent"
                 />
-              </a>
-            </Link>
+            </div>
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-3xl font-semibold text-center">

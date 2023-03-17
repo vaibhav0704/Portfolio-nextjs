@@ -73,6 +73,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const projects: Project[] = await fetchProjects();
   const socials: Social[] = await fetchSocials();
 
+  // reverse the projects array
+  projects.reverse();
+
   return {
     props: {
       pageInfo,
