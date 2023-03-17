@@ -1,6 +1,7 @@
 import React from 'react'
 import { PhoneIcon, MapIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { PageInfo } from '../typings';
 
 type Inputs = {
   name: string;
@@ -9,9 +10,11 @@ type Inputs = {
   message: string;
 }
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-function ContactMe({}: Props) {
+function ContactMe({ pageInfo }: Props) {
 
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = formData => {
@@ -32,17 +35,17 @@ function ContactMe({}: Props) {
         <div className="space-y-5 md:space-y-10">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-xl md:text-2xl">+918885417955</p>
+            <p className="text-xl md:text-2xl">{pageInfo?.phoneNumber || ''}</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-xl md:text-2xl">vaibhavsaraf.08@gmail.com</p>
+            <p className="text-xl md:text-2xl">{pageInfo?.email || ''}</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <MapIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-xl md:text-2xl">123 Developer Lane</p>
+            <p className="text-xl md:text-2xl">{pageInfo?.address || ''}</p>
           </div>
 
         </div>

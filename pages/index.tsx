@@ -57,7 +57,7 @@ const Home: NextPage<Props> = ({ pageInfo, experiences, skills, projects, social
       </section>
 
       <section id="contact" className="snap-start">
-        <ContactMe />
+        <ContactMe pageInfo={pageInfo}/>
       </section>
 
     </div>
